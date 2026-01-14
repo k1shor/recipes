@@ -5,12 +5,18 @@
     <title>Redirecting...</title>
     <script>
       // SPA redirect for GitHub Pages (BrowserRouter)
+      var repo = "/recipes/";
       var path = window.location.pathname;
-      var repo = "/<repo-name>/";
-      // store the path after the repo name
-      var redirectPath = path.startsWith(repo) ? path.slice(repo.length) : path;
-      // redirect to index.html with the route in query
-      window.location.replace(repo + "?p=" + encodeURIComponent(redirectPath) + window.location.search + window.location.hash);
+
+      // Remove the repo base from the path
+      var route = path.startsWith(repo) ? path.slice(repo.length) : path;
+
+      // Preserve existing search/hash too
+      var search = window.location.search || "";
+      var hash = window.location.hash || "";
+
+      // Redirect to index with route in query param
+      window.location.replace(repo + "?p=" + encodeURIComponent(route + search + hash));
     </script>
   </head>
   <body></body>
