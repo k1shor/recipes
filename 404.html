@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // SPA redirect for GitHub Pages (BrowserRouter)
+      var path = window.location.pathname;
+      var repo = "/<repo-name>/";
+      // store the path after the repo name
+      var redirectPath = path.startsWith(repo) ? path.slice(repo.length) : path;
+      // redirect to index.html with the route in query
+      window.location.replace(repo + "?p=" + encodeURIComponent(redirectPath) + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body></body>
+</html>
