@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* 
+*{
+    box-sizing: border-box!important;
+} */
+
+.dark-btn{
+    background-color: gray;
+    color: white;
+}
+
+.light-btn{
+    background-color: green;
+    color: yellow;
+}
+
+.DARK-btn{
+    background-color: gray;
+    color: white;
+}
+.LIGHT-btn{
+    background-color: green;
+    color: yellow;
+}
