@@ -18,6 +18,18 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script> -->
 
+    <script>
+  // Restore SPA route after GitHub Pages 404 redirect
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("p");
+    if (p) {
+      const cleanUrl = window.location.origin + window.location.pathname.replace(/\?.*$/, "") + p;
+      window.history.replaceState(null, "", cleanUrl);
+    }
+  })();
+</script>
+
 </body>
 
 </html>

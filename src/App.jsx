@@ -14,9 +14,9 @@ export const MyThemeContext = createContext()
 const App = () => {
   const [theme, setTheme] = useState('DARK')
   const isLight = theme === 'LIGHT'
-
+const basename = import.meta.env.BASE_URL
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <MyThemeContext.Provider value={{ theme, setTheme }}>
         <MyContextProvider>
 
